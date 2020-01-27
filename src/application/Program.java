@@ -18,9 +18,7 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		Function<Product, String> func = p -> p.getName().toUpperCase();
-		
-		List<String> names = list.stream().map(func).collect(Collectors.toList());
+		List<String> names = list.stream().map(p -> p.getName().toUpperCase()).collect(Collectors.toList());
 		             // convert to stream                               convert to list 
 					// map = apply the function to each element of the list
 		names.forEach(System.out::println);
